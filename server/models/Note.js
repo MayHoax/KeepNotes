@@ -4,7 +4,7 @@ const noteSchema = new mongoose.Schema(
   {
     title: { type: String },
     content: String,
-    color: { type: String, default: "fff" },
+    color: { type: String, default: "#fff" },
     pinned: { type: Boolean, default: false },
     userId: {
       type: mongoose.Schema.Types.ObjectId,

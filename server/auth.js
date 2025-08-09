@@ -1,7 +1,8 @@
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 
-//TODO: Вытащить JWT из env
-const JWT_SECRET = "TESTJWT";
+dotenv.config();
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export function auth(req, res, next) {
   const token = req.headers.authorization?.split(" ")[1];
