@@ -2,9 +2,7 @@ import mongoose from "mongoose";
 
 export async function connectDB(param) {
   try {
-    await mongoose.connect(
-      "mongodb+srv://deidaravalera:m0ng0n0tes@notesappcluster.v9uhoin.mongodb.net/?retryWrites=true&w=majority&appName=NotesAppCluster"
-    );
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("MongoDB connected");
   } catch (error) {
     console.error("Connection error:", error);
